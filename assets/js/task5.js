@@ -1,12 +1,7 @@
 "use strict";
 
 /*
-some
-есть ли в массиве отрицательное число
 
-join
-- преобразовать массив в строку по шаблону "1 and 2 and 3 and 4 and 5"
-1:2:3:4:5
 
 reverse
 развернуть массив обратно
@@ -126,10 +121,7 @@ let userArrayVariousTypes = [56, "dff", 45, null, "jerheg"];
 function FindStringsInArray(userArray) {
   return userArray.filter((element) => typeof element == "string");
 }
-console.log(
-  "Массив = " +
-    userArrayVariousTypes
-);
+console.log("Массив = " + userArrayVariousTypes);
 console.log("содержит строки = " + FindStringsInArray(userArrayVariousTypes));
 console.log(
   "------------------------------------------------------------------"
@@ -144,7 +136,10 @@ let userArrayWithNegativeNumbers = [56, -56, 0, -5, 34];
 function FindFirstNegativeNumberInArray(userArray) {
   return userArray.find((element) => element < 0);
 }
-console.log("Первый негативный элемент" + FindFirstNegativeNumberInArray(userArrayWithNegativeNumbers));
+console.log(
+  "Первый негативный элемент" +
+    FindFirstNegativeNumberInArray(userArrayWithNegativeNumbers)
+);
 console.log(
   "------------------------------------------------------------------"
 );
@@ -172,15 +167,46 @@ includes
 - содержит ли массив отрицательное число
 */
 
-function HasNegativeNumberInArray(userArray) {
-  return userArray.includes(-5);
+function HasNegativeNumberInArray(userArray, number) {
+  return userArray.includes(number);
 }
 console.log(
   "Содержит ли массив " +
     userArrayWithNegativeNumbers +
     " число -5  " +
-    HasNegativeNumberInArray(userArrayWithNegativeNumbers)
+    HasNegativeNumberInArray(userArrayWithNegativeNumbers, -5)
 );
+console.log(
+  "------------------------------------------------------------------"
+);
+
+/*
+some
+есть ли в массиве отрицательное число
+*/
+
+function HasNegativeNumbersInArray(userArray) {
+  return userArray.some((elem) => elem < 0);
+}
+console.log(
+  "Содержит ли массив " +
+    userArrayWithNegativeNumbers +
+    " отрицательные числа   " +
+    HasNegativeNumbersInArray(userArrayWithNegativeNumbers)
+);
+console.log(
+  "------------------------------------------------------------------"
+);
+/*
+join
+- преобразовать массив в строку по шаблону "1 and 2 and 3 and 4 and 5"
+*/
+function PatternInArray(userArray) {
+  return userArray.join(" and ");
+}
+console.log("Массив = " + userArray1);
+
+console.log("После преобразования = " + PatternInArray(userArray1));
 console.log(
   "------------------------------------------------------------------"
 );
