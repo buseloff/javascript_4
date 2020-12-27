@@ -196,16 +196,6 @@ console.log(
 /*
 reverse
 развернуть массив обратно
-
-splice
-- удалить 3 элемент массива
-- удалить 3 элемент массива и вставить новый элемент после него
-- удалить с 3 по 5 элементы массива
-- удалить первые 3 элемента
-- удалить последние 3 элемента
-
-slice
-- вернуть фрагмент массива от N1 до N2
 */
 
 function ReverseArray(userArray) {
@@ -231,6 +221,51 @@ console.log("Массив = " + userArray1);
 console.log(
   "Элементы отсортированые порядке убывания = " +
     SortReverseOrderArray(userArray1)
+);
+console.log(
+  "------------------------------------------------------------------"
+);
+
+/*
+splice
+- удалить 3 элемент массива
+- удалить 3 элемент массива и вставить новый элемент после него
+- удалить с 3 по 5 элементы массива
+- удалить первые 3 элемента
+- удалить последние 3 элемента
+*/
+console.log("Массив = " + (userArray2 = userArray2.concat(userArray3)));
+userArray2.splice(2, 1);
+console.log("Массив c удаленным 3 элементом = " + userArray2);
+userArray2.splice(2, 1, 1000);
+console.log(
+  "Массив c удаленным 3 элементом и вставленный элемент 1000 = " + userArray2
+);
+userArray2.splice(2, 3);
+console.log("Массив c удаленным 3,4,5 элементом = " + userArray2);
+userArray2.splice(0, 3);
+console.log("Массив c удаленным 1,2,3 элементом = " + userArray2);
+userArray2.splice(-3, 3);
+console.log("Массив c удаленным 1,2,3 элементом с конца = " + userArray2);
+console.log(
+  "------------------------------------------------------------------"
+);
+/*
+slice
+- вернуть фрагмент массива от N1 до N2
+*/
+
+let n1 = 2;
+let n2 = 5;
+function SliceOfArray(userArray, n1, n2) {
+  let modArr = [];
+  modArr = userArray.slice(n1-1, n2);
+  return modArr;
+}
+console.log("Массив = " + userArray3);
+
+console.log(
+  "Срез элементов с " + n1 + " по " + n2 + " = " + SliceOfArray(userArray3, n1, n2)
 );
 console.log(
   "------------------------------------------------------------------"
