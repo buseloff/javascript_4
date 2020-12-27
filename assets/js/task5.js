@@ -83,7 +83,7 @@ function ConcatOfThreeArrays(userArray1, userArray2, userArray3) {
   let concatArrays = userArray1.concat(userArray2).concat(userArray3);
   return concatArrays;
 }
-
+console.log("Склеенный массив из 3 массивов");
 console.log(ConcatOfThreeArrays(userArray1, userArray2, userArray3));
 console.log(
   "------------------------------------------------------------------"
@@ -112,7 +112,7 @@ fill
 */
 let userArrayStars = new Array(lengthOfUserArray);
 userArrayStars.fill("*");
-console.log(userArrayStars);
+console.log("Массив звезд = " + userArrayStars);
 console.log(
   "------------------------------------------------------------------"
 );
@@ -126,7 +126,11 @@ let userArrayVariousTypes = [56, "dff", 45, null, "jerheg"];
 function FindStringsInArray(userArray) {
   return userArray.filter((element) => typeof element == "string");
 }
-console.log(FindStringsInArray(userArrayVariousTypes));
+console.log(
+  "Массив = " +
+    userArrayVariousTypes
+);
+console.log("содержит строки = " + FindStringsInArray(userArrayVariousTypes));
 console.log(
   "------------------------------------------------------------------"
 );
@@ -140,7 +144,7 @@ let userArrayWithNegativeNumbers = [56, -56, 0, -5, 34];
 function FindFirstNegativeNumberInArray(userArray) {
   return userArray.find((element) => element < 0);
 }
-console.log(FindFirstNegativeNumberInArray(userArrayWithNegativeNumbers));
+console.log("Первый негативный элемент" + FindFirstNegativeNumberInArray(userArrayWithNegativeNumbers));
 console.log(
   "------------------------------------------------------------------"
 );
@@ -167,3 +171,16 @@ console.log(
 includes
 - содержит ли массив отрицательное число
 */
+
+function HasNegativeNumberInArray(userArray) {
+  return userArray.includes(-5);
+}
+console.log(
+  "Содержит ли массив " +
+    userArrayWithNegativeNumbers +
+    " число -5  " +
+    HasNegativeNumberInArray(userArrayWithNegativeNumbers)
+);
+console.log(
+  "------------------------------------------------------------------"
+);
