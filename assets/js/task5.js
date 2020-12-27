@@ -1,27 +1,6 @@
 "use strict";
 
 /*
-String
-
-charAt
-Вывести 5-й символ в строке
-
-IndexOf
-- найти индекс первого пробела в строке
- 
-lastIndexOf
-- найти индекс последнего пробела в строке
-
-split
-- вернуть массив слов предложения
-
-substr
--вернуть первых 5 символов предложения
-
-toUpperCase
--преобразовать строку в верхний ригистр
-*/
-/*
 indexOf
 найти индекс первого нулевого элемента
 */
@@ -259,14 +238,60 @@ let n1 = 2;
 let n2 = 5;
 function SliceOfArray(userArray, n1, n2) {
   let modArr = [];
-  modArr = userArray.slice(n1-1, n2);
+  modArr = userArray.slice(n1 - 1, n2);
   return modArr;
 }
 console.log("Массив = " + userArray3);
 
 console.log(
-  "Срез элементов с " + n1 + " по " + n2 + " = " + SliceOfArray(userArray3, n1, n2)
+  "Срез элементов с " +
+    n1 +
+    " по " +
+    n2 +
+    " = " +
+    SliceOfArray(userArray3, n1, n2)
 );
+console.log(
+  "------------------------------------------------------------------"
+);
+/*
+String
+charAt
+Вывести 5-й символ в строке
+
+IndexOf
+- найти индекс первого пробела в строке
+ 
+lastIndexOf
+- найти индекс последнего пробела в строке
+
+split
+- вернуть массив слов предложения
+
+substr
+-вернуть первых 5 символов предложения
+
+toUpperCase
+-преобразовать строку в верхний ригистр
+*/
+
+let userString = "Loremdfgdf ipsum dolor sit amet consectetur adipisicing elit";
+console.log("Заданная строка = " + userString);
+console.log("Пятый символ строки = " + userString.charAt(5));
+console.log("Индекс первого пробела строки = " + userString.indexOf(" "));
+console.log(
+  "Индекс последнего пробела строки = " + userString.lastIndexOf(" ")
+);
+
+function ArrayOfWords(userString) {
+  let arrayOfWords = userString.split(" ");
+  return arrayOfWords;
+}
+
+console.log("Массив слов строки:  " + ArrayOfWords(userString).join("||"));
+console.log("Первые 5 символов строки = " + userString.substr(0, 5));
+console.log("Строка в верхнем регистре = " + userString.toUpperCase());
+
 console.log(
   "------------------------------------------------------------------"
 );
